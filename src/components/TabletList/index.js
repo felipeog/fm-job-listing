@@ -1,7 +1,11 @@
+import { useContext } from 'react'
+import { FiltersContext } from '../../contexts/Filters'
 import Tablet from '../Tablet'
 import './index.scss'
 
-function TabletList({ tablets, toggleValueFilter, removeIcon }) {
+function TabletList({ tablets, removeIcon }) {
+  const { toggleValueFilter } = useContext(FiltersContext)
+
   return (
     <ul className="TabletList">
       {tablets.map(({ value, filter }) => (

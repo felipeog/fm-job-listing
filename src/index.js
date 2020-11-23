@@ -1,6 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import './index.scss'
 import App from './App'
+import { FiltersProvider } from './contexts/Filters'
+import './index.scss'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+ReactDOM.render(
+  <FiltersProvider>
+    <App />
+  </FiltersProvider>,
+  document.getElementById('root')
+)

@@ -1,9 +1,12 @@
+import { useContext } from 'react'
+import { FiltersContext } from '../../contexts/Filters'
+import { getTabletsFromFilters } from '../../utils/getTabletsFromFilters'
 import WidthWrapper from '../WidthWrapper'
 import TabletList from '../TabletList'
-import { getTabletsFromFilters } from '../../utils/getTabletsFromFilters'
 import './index.scss'
 
-function FiltersHeader({ filters, toggleValueFilter, clearAllFilters }) {
+function FiltersHeader() {
+  const { filters, clearAllFilters } = useContext(FiltersContext)
   const tablets = getTabletsFromFilters(filters)
 
   return (
@@ -17,11 +20,7 @@ function FiltersHeader({ filters, toggleValueFilter, clearAllFilters }) {
           }`}
         >
           <div className="FiltersHeader__tablets">
-            <TabletList
-              tablets={tablets}
-              toggleValueFilter={toggleValueFilter}
-              removeIcon
-            />
+            <TabletList tablets={tablets} removeIcon />
           </div>
           <button
             className="FiltersHeader__clear-button"

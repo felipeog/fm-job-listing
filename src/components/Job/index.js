@@ -2,7 +2,7 @@ import TabletList from '../TabletList'
 import { getTabletsFromJob } from '../../utils/getTabletsFromJob'
 import './index.scss'
 
-function Job({ job, toggleValueFilter }) {
+function Job({ job }) {
   const {
     company,
     logo,
@@ -31,7 +31,7 @@ function Job({ job, toggleValueFilter }) {
         </p>
       </div>
 
-      <TabletList tablets={tablets} toggleValueFilter={toggleValueFilter} />
+      <TabletList tablets={tablets} />
     </article>
   )
 }
