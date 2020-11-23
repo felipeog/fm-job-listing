@@ -1,27 +1,10 @@
 import WidthWrapper from '../WidthWrapper'
 import TabletList from '../TabletList'
+import { getTabletsFromFilters } from '../../utils/getTabletsFromFilters'
 import './index.scss'
 
 function FiltersHeader({ filters, toggleValueFilter, clearAllFilters }) {
-  function getTablets() {
-    let tablets = []
-
-    Object.keys(filters).forEach((key) => {
-      if (filters[key]) {
-        if (typeof filters[key] === 'string') {
-          tablets.push({ value: filters[key], filter: key })
-        }
-
-        if (Array.isArray(filters[key]) && filters[key].length) {
-          filters[key].forEach((value) => tablets.push({ value, filter: key }))
-        }
-      }
-    })
-
-    return tablets
-  }
-
-  const tablets = getTablets()
+  const tablets = getTabletsFromFilters(filters)
 
   return (
     <div className="FiltersHeader">

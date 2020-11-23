@@ -1,0 +1,56 @@
+@import '../../scss/variables';
+
+.Job {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  padding: 2rem;
+
+  &__logo {
+    margin-right: 2em;
+  }
+
+  &__company {
+    color: $primary;
+  }
+
+  &__is-new,
+  &__is-featured {
+    border-radius: 99rem;
+    padding: 0.4rem 0.6rem 0.2rem;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    font-weight: bold;
+    margin-left: 0.4rem;
+  }
+
+  &__is-new {
+    background-color: $primary;
+    color: #fff;
+  }
+
+  &__is-featured {
+    background-color: $secondary-dark;
+    color: #fff;
+  }
+
+  &__position {
+    margin: 1rem 0;
+    font-weight: bold;
+    font-size: 1.1rem;
+  }
+
+  &__meta {
+    color: $primary;
+  }
+
+  &.Job--is-featured {
+    box-shadow: 4.4rem 0 0 -4rem $primary inset;
+  }
+
+  .TabletList {
+    margin-left: auto;
+  }
+}
