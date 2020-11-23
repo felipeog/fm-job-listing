@@ -1,0 +1,18 @@
+@import '../../scss/variables';
+
+.WidthWrapper {
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .WidthWrapper {
+    max-width: $desktop-width;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .WidthWrapper {
+    max-width: $mobile-width;
+  }
+}
