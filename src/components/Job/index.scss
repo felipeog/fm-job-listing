@@ -47,7 +47,7 @@
   }
 
   &.Job--is-featured {
-    box-shadow: 4.4rem 0 0 -4rem $primary inset;
+    box-shadow: $box-shadow, 4.4rem 0 0 -4rem $primary inset;
   }
 
   .TabletList {
