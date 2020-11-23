@@ -1,7 +1,40 @@
 @import '../../scss/variables';
 
 .FiltersHeader {
-  background-color: $primary;
-  background-image: url('../../assets/bg-header-desktop.svg');
-  background-size: cover;
+  &__bg {
+    height: 8rem;
+    background-color: $primary;
+    background-image: url('../../assets/bg-header-desktop.svg');
+    background-size: cover;
+  }
+
+  &__content {
+    padding: 1.4rem 2.2rem;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+    display: flex;
+    background: #fff;
+    margin-top: -2rem;
+    transition: 200ms opacity;
+
+    &--hidden {
+      opacity: 0;
+    }
+  }
+
+  &__clear-button {
+    font-family: $font-family;
+    font-size: 1rem;
+    font-weight: bold;
+    color: $primary;
+    margin-left: auto;
+    padding: 0.6rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
 }

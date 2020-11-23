@@ -1,0 +1,45 @@
+@import '../../scss/variables';
+
+.Tablet {
+  background-color: $tablet;
+  border-radius: $border-radius;
+  color: $primary;
+  padding: 0.6rem 0.8rem;
+  cursor: pointer;
+  transition: 100ms;
+  position: relative;
+
+  &:hover {
+    background-color: $primary;
+    color: $tablet;
+  }
+
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 0.4rem;
+    border-top-right-radius: $border-radius;
+    border-bottom-right-radius: $border-radius;
+    background-color: $primary;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    transition: 100ms;
+  }
+
+  &.Tablet--remove-icon {
+    display: flex;
+    padding-right: 2.4rem;
+
+    &:hover {
+      background-color: $tablet;
+      color: $primary;
+
+      .Tablet__icon {
+        background-color: $secondary-dark;
+      }
+    }
+  }
+}

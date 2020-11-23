@@ -1,0 +1,8 @@
+.TabletList {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item + &__item {
+    margin-left: 1rem;
+  }
+}
