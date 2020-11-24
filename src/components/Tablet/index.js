@@ -3,7 +3,8 @@ import IconRemove from '../../assets/icon-remove.svg'
 
 function Tablet({ text, onClick, removeIcon }) {
   return (
-    <div
+    <button
+      type="button"
       className={`Tablet${removeIcon ? ' Tablet--remove-icon' : ''}`}
       onClick={onClick}
     >
@@ -13,7 +14,7 @@ function Tablet({ text, onClick, removeIcon }) {
           <img src={IconRemove} alt="" />
         </div>
       )}
-    </div>
+    </button>
   )
 }
 

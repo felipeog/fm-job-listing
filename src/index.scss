@@ -1,6 +1,12 @@
 @import './scss/reset';
 @import './scss/variables';
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 html {
   font-family: $font-family;
   font-size: 15px;

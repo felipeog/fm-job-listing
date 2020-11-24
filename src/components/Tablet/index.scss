@@ -8,6 +8,8 @@
   cursor: pointer;
   transition: 100ms;
   position: relative;
+  border: none;
+  font-family: $font-family;
 
   &:hover {
     background-color: $primary;

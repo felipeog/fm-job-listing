@@ -19,16 +19,20 @@ function FiltersHeader() {
             !tablets?.length ? ' FiltersHeader__content--hidden' : ''
           }`}
         >
-          <div className="FiltersHeader__tablets">
-            <TabletList tablets={tablets} removeIcon />
-          </div>
-          <button
-            className="FiltersHeader__clear-button"
-            type="button"
-            onClick={clearAllFilters}
-          >
-            Clear
-          </button>
+          {!!tablets?.length && (
+            <>
+              <div className="FiltersHeader__tablets">
+                <TabletList tablets={tablets} removeIcon />
+              </div>
+              <button
+                className="FiltersHeader__clear-button"
+                type="button"
+                onClick={clearAllFilters}
+              >
+                Clear
+              </button>
+            </>
+          )}
         </div>
       </WidthWrapper>
     </div>
