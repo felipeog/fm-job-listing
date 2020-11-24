@@ -2,15 +2,10 @@
 
 .Job {
   display: flex;
-  align-items: center;
   background-color: #fff;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   padding: 2rem;
-
-  &__logo {
-    margin-right: 2em;
-  }
 
   &__company {
     color: $primary;
@@ -49,8 +44,42 @@
   &.Job--is-featured {
     box-shadow: $box-shadow, 4.4rem 0 0 -4rem $primary inset;
   }
+}
 
-  .TabletList {
-    margin-left: auto;
+@media screen and (min-width: 1060px) {
+  .Job {
+    align-items: center;
+
+    &__logo {
+      margin-right: 2em;
+    }
+
+    .TabletList {
+      margin-left: auto;
+    }
+  }
+}
+
+@media screen and (max-width: 1059px) {
+  .Job {
+    flex-direction: column;
+    margin-top: 3rem;
+
+    &__logo {
+      margin-top: -4em;
+    }
+
+    &__image {
+      width: 4rem;
+    }
+
+    &__content {
+      margin: 1rem 0;
+    }
+
+    .TabletList {
+      border-top: 0.1rem solid $primary;
+      padding-top: 1rem;
+    }
   }
 }

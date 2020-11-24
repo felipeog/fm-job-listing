@@ -18,7 +18,7 @@ function Job({ job }) {
   return (
     <article className={`Job${isFeatured ? ' Job--is-featured' : ''}`}>
       <div className="Job__logo">
-        <img src={logo} alt={company} />
+        <img className="Job__image" src={logo} alt={company} />
       </div>
       <div className="Job__content">
         <p className="Job__company">
