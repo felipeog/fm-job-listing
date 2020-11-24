@@ -2,19 +2,19 @@
 
 .FiltersHeader {
   &__bg {
-    height: 8rem;
+    height: 10.6rem;
     background-color: $primary;
     background-image: url('../../assets/bg-header-desktop.svg');
     background-size: cover;
   }
 
   &__content {
-    padding: 1.4rem 2.2rem;
+    padding: 1rem 2.2rem;
     border-radius: $border-radius;
     box-shadow: $box-shadow;
     display: flex;
     background: #fff;
-    margin-top: -2rem;
+    margin-top: -2.6rem;
     transition: 200ms opacity;
 
     &--hidden {
