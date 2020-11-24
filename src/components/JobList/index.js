@@ -8,15 +8,15 @@ function JobList() {
   const { jobs } = useContext(FiltersContext)
 
   return (
-    <ul className="JobList">
-      <WidthWrapper>
+    <div className="JobList">
+      <WidthWrapper as="ul">
         {jobs.map((job) => (
           <li className="JobList__item" key={job.id}>
             <Job job={job} />
           </li>
         ))}
       </WidthWrapper>
-    </ul>
+    </div>
   )
 }
 
