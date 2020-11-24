@@ -23,6 +23,11 @@
     }
   }
 
+  &__tablets {
+    display: flex;
+    align-items: center;
+  }
+
   &__clear-button {
     font-family: $font-family;
     font-size: 1rem;
