@@ -1,20 +1,31 @@
-### Filtering
+# [Job listings with filtering](https://www.frontendmentor.io/challenges/job-listings-with-filtering-ivstIPCt)
 
-#### Option 1
+https://fm-job-listing.netlify.app/
 
-Filter job listings based on the categories using the HTML `data-` attribute. In this option, you'd use the hardcoded content that already exists in the [index.html](./index.html) file.
+---
 
-The categories are:
+# Getting Started with Create React App
 
-- Role: Frontend, Backend, Fullstack
-- Level: Junior, Midweight, Senior
-- Languages: Python, Ruby, JavaScript, HTML, CSS
-- Tools: React, Sass, Vue, Django, RoR (Ruby on Rails)
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-So, if a job listing is for has the following categories `Frontend, Junior, JavaScript, React` your HTML data attributes would look like this `data-role="frontend" data-level="junior" data-languages="javascript" data-tools="react"`.
+## Available Scripts
 
-#### Option 2
+In the project directory, you can run:
 
-Use the [data.json](./data.json) file to pull the data and then dynamically add the content. This would be perfect if you're looking to practice a JS library/framework like React, Vue, or Svelte.
+### `npm start`
 
-To add a filter, the user needs to click on the tablets on the right-side of the listing on desktop or the bottom on mobile. For each filter added, only listings containing all selected filters should be returned.
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
+
+### `npm run build`
+
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
+
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
+
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
