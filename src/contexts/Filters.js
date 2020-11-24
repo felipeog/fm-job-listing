@@ -1,4 +1,6 @@
 import { createContext, useState, useEffect } from 'react'
+import { useHistory, useLocation } from 'react-router-dom'
+import queryString from 'query-string'
 import data from '../consts/data.json'
 
 const defaultState = {
@@ -11,8 +13,26 @@ const defaultState = {
 export const FiltersContext = createContext(defaultState)
 
 export function FiltersProvider({ children }) {
+  const history = useHistory()
+  const location = useLocation()
   const [jobs, setJobs] = useState(data)
   const [filters, setFilters] = useState(defaultState)
+
+  useEffect(() => {
+    const { role, level, languages, tools } = queryString.parse(location.search)
+    const newFilters = {
+      role: role ?? null,
+      level: level ?? null,
+      languages: languages
+        ? Array.isArray(languages)
+          ? languages
+          : [languages]
+        : [],
+      tools: tools ? (Array.isArray(tools) ? tools : [tools]) : [],
+    }
+
+    setFilters(newFilters)
+  }, [location])
 
   useEffect(() => {
     let filteredJobs = data
@@ -45,42 +65,49 @@ export function FiltersProvider({ children }) {
   }, [filters])
 
   function toggleValueFilter(value, filter) {
+    let newFilters = filters
+    let newValue = null
+
     switch (filter) {
       case 'role':
       case 'level':
-        setFilters((filters) => {
-          const newValue = value === filters[filter] ? null : value
+        newValue = value === filters[filter] ? null : value
 
-          return {
-            ...filters,
-            [filter]: newValue,
-          }
-        })
+        newFilters = {
+          ...newFilters,
+          [filter]: newValue,
+        }
 
         break
 
       case 'languages':
       case 'tools':
-        const newValue = filters[filter].includes(value)
+        newValue = filters[filter].includes(value)
           ? filters[filter].filter((filter) => value !== filter)
           : [...filters[filter], value]
 
-        setFilters((filters) => {
-          return {
-            ...filters,
-            [filter]: newValue,
-          }
-        })
+        newFilters = {
+          ...newFilters,
+          [filter]: newValue,
+        }
 
         break
 
       default:
-        throw new Error('Home @ handleTabletClick >>>>> Invalid filter')
+        throw new Error(
+          'FiltersProvider @ toggleValueFilter >>>>> Invalid filter'
+        )
     }
+
+    const stringifiedFilters = queryString.stringify(newFilters, {
+      skipNull: true,
+    })
+
+    history.push({ search: stringifiedFilters })
   }
 
   function clearAllFilters() {
-    setFilters(defaultState)
+    history.push({ search: '' })
   }
 
   return (
