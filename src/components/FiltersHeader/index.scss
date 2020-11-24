@@ -4,8 +4,8 @@
   &__bg {
     height: 10.6rem;
     background-color: $primary;
-    background-image: url('../../assets/bg-header-desktop.svg');
     background-size: cover;
+    background-position: center;
   }
 
   &__content {
@@ -36,6 +36,22 @@
 
     &:hover {
       text-decoration: underline;
+    }
+  }
+}
+
+@media screen and (min-width: 1060px) {
+  .FiltersHeader {
+    &__bg {
+      background-image: url('../../assets/bg-header-desktop.svg');
+    }
+  }
+}
+
+@media screen and (max-width: 1059px) {
+  .FiltersHeader {
+    &__bg {
+      background-image: url('../../assets/bg-header-mobile.svg');
     }
   }
 }

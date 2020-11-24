@@ -9,6 +9,8 @@
 
   &__company {
     color: $primary;
+    font-size: 0.9rem;
+    font-weight: bold;
   }
 
   &__is-new,
@@ -35,10 +37,17 @@
     margin: 1rem 0;
     font-weight: bold;
     font-size: 1.1rem;
+    cursor: pointer;
+    transition: 100ms;
+
+    &:hover {
+      color: $primary;
+    }
   }
 
   &__meta {
     color: $primary;
+    font-size: 0.9rem;
   }
 
   &.Job--is-featured {
